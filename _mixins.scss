@@ -4,4 +4,22 @@
     -ms-transition: $args;
     -o-transition: $args;
     transition: $args;
+}
+@mixin mykeyframe ($animation_name) {
+    @-webkit-keyframes #{$animation_name} {
+        @content;
+    }
+  
+    @-moz-keyframes #{$animation_name} {
+        @content;
+    }
+  
+    @-o-keyframes #{$animation_name} {
+        @content;
+    }
+  
+    @keyframes #{$animation_name} {
+        @content;
+    }
   }
+
