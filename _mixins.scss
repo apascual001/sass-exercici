@@ -5,7 +5,14 @@
     -o-transition: $args;
     transition: $args;
 }
-@mixin mykeyframe ($animation_name) {
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};      
+  }
+@mixin keyframes ($animation_name) {
     @-webkit-keyframes #{$animation_name} {
         @content;
     }

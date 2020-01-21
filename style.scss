@@ -1,4 +1,12 @@
 @import "mixins";
+@include keyframes(fadeInUp) {
+    from {
+        opacity: 0;
+        transform: translateY(30px); }
+      to {
+        opacity: 1;
+        transform: translateY(0); }   
+  }
 body{
     display: flex;
     margin: 0;
@@ -17,6 +25,12 @@ body{
         height: 100%;
         overflow: hidden;
         position: relative;
+
+        overflow: hidden;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        @include animation ('fadeInUp' 1s ease-in-out);
+    
         &:first-child{
             background-color: #244F75;
         }
@@ -47,12 +61,16 @@ body{
                     transform-origin: center center;
             -webkit-transform: skew(30deg) scaleY(1) translate(0, 0);
                     transform: skew(30deg) scaleY(1) translate(0, 0);
-            @include transition (all 0.6s cubic-bezier(0.23, 1, 0.32, 1));
-          }
+            @include transition (all 1s ease-in-out 0.2s);
+        }
+        &:hover{
+            &:before {
+            -webkit-transform: skew(0deg) scaleY(0) translate(0, 0);
+            transform: skew(0deg) scaleY(0) translate(0, 0);
+            }
+        }
+
           
             
     }
-}
-h1{
-
 }
